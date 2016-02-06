@@ -1,0 +1,6 @@
+test_srv:
+  image: emarcs/nginx-cgit
+  ports:
+    - 8181:80
+  volumes:
+    - /srv/git:/srv/git
