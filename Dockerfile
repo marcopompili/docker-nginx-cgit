@@ -22,6 +22,6 @@ VOLUME ["/srv/git"]
 
 COPY cgitrc /etc/
 
-COPY default.conf /etc/nginx/conf.d/
+COPY default /etc/nginx/sites-available/
 
 COPY startup /etc/minit/
