@@ -1,4 +1,4 @@
-FROM emarcs/base-debian:jessie
+FROM emarcs/debian-minit:jessie
 
 MAINTAINER Marco Pompili "marco.pompili@emarcs.org"
 
@@ -18,10 +18,10 @@ EXPOSE 80 443
 
 RUN mkdir /srv/git
 
+VOLUME ["/srv/git"]
+
 COPY cgitrc /etc/
 
 COPY default.conf /etc/nginx/conf.d/
 
-COPY startup /etc/minit/startup
-
-VOLUME ["/srv/git"]
+COPY startup /etc/minit/
