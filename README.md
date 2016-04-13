@@ -1,8 +1,8 @@
 # docker-nginx-cgit
 
-A docker image for cgit running over nginx.
+A Docker image for Cgit running over Nginx.
 
-This is a docker image for cgit, a lightweight web interface for git.
+This is a docker image for Cgit, a lightweight web interface for git.
 
 ## Installation
 
@@ -30,3 +30,19 @@ docker run -d -p 2340:80 \
 In the above example the **/git** folder of the the host
 is used inside the **/srv/git** folder of the container,
 the HTTP port is mapped on the host on port **2340**.
+
+### Using a custom Nginx configuration
+
+An example using docker-compose of how to mount a custom
+configuration for Nginx:
+
+```ymp
+test_srv:
+  image: emarcs/nginx-cgit
+  ports:
+    - 8181:80
+  volumes:
+    - /srv/git:/srv/git
+    # custom nginx configuration
+    #- ./default.conf:/etc/nginx/sites-available/default
+```

@@ -4,3 +4,5 @@ test_srv:
     - 8181:80
   volumes:
     - /srv/git:/srv/git
+    # for a custom nginx configuration
+    #- ./default.conf:/etc/nginx/sites-available/default
