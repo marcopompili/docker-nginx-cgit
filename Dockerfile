@@ -3,7 +3,7 @@ FROM emarcs/debian-minit:jessie
 MAINTAINER Marco Pompili "marco.pompili@emarcs.org"
 
 RUN apt-get -q -q update && \
-    apt-get -q -q -y install fcgiwrap git cgit && \
+    apt-get -q -q -y install fcgiwrap git cgit highlight && \
     apt-get -q -q -y install ca-certificates nginx gettext-base
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -21,6 +21,8 @@ RUN mkdir /srv/git
 VOLUME ["/srv/git"]
 
 COPY cgitrc /etc/
+
+COPY syntax-highlighting.sh /usr/lib/cgit/filters/
 
 COPY default.conf /etc/nginx/sites-available/default
 

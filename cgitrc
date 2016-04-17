@@ -5,6 +5,8 @@
 root-title=emarcs git server
 root-desc=Git repositories in use on emarcs
 
+source-filter=/usr/lib/cgit/filters/syntax-highlighting.sh
+
 # Default Theme
 css=/cgit-css/cgit.css
 logo=/cgit-css/cgit.png
