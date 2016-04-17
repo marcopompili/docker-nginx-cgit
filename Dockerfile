@@ -28,6 +28,7 @@ COPY syntax-highlighting.sh /usr/lib/cgit/filters/
 COPY default.conf /etc/nginx/sites-available/default
 
 COPY 404.html /usr/share/nginx/html/
+COPY 401.html /usr/share/nginx/html/
 
 COPY startup /etc/minit/
 
