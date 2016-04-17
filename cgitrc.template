@@ -21,7 +21,7 @@ snapshots=tar.gz tar.bz2 zip
 
 robots=noindex, nofollow
 
-virtual-root=/cgit/
+virtual-root=$CGIT_VROOT
 
 section-from-path=$CGIT_SECTION_FROM_STARTPATH
 
