@@ -46,5 +46,10 @@ test_srv:
   volumes:
     - /srv/git:/srv/git
     # custom nginx configuration
-    #- ./default.conf:/etc/nginx/sites-available/default
+    - ./default.conf:/etc/nginx/sites-available/default
+  environment:
+    CGIT_TITLE: 'My awesome git repos'
+    CGIT_DESC: 'Presented by Cgit on Docker'
+    # check section-from-path in cgit docs
+    CGIT_SECTION_FROM_STARTPATH: 0
 ```

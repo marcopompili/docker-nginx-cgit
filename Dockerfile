@@ -1,10 +1,11 @@
 FROM emarcs/debian-minit:jessie
 
-MAINTAINER Marco Pompili "marco.pompili@emarcs.org"
+MAINTAINER Marco Pompili "docker@emarcs.org"
 
-RUN apt-get -q -q update && \
-    apt-get -q -q -y install fcgiwrap git cgit highlight && \
-    apt-get -q -q -y install ca-certificates nginx gettext-base
+RUN apt-get -qq update && \
+    apt-get -qy install gettext-base && \
+    apt-get -qy install fcgiwrap git cgit highlight && \
+    apt-get -qy install ca-certificates nginx gettext-base
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -20,10 +21,16 @@ RUN mkdir /srv/git
 
 VOLUME ["/srv/git"]
 
-COPY cgitrc /etc/
+COPY cgitrc.template /etc/
 
 COPY syntax-highlighting.sh /usr/lib/cgit/filters/
 
 COPY default.conf /etc/nginx/sites-available/default
 
+COPY 404.html /usr/share/nginx/html/
+
 COPY startup /etc/minit/
+
+ENV CGIT_TITLE "My cgit interface"
+ENV CGIT_DESC "Super fast interface to my git repositories"
+ENV CGIT_SECTION_FROM_STARTPATH 0

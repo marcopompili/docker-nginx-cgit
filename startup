@@ -1,5 +1,9 @@
 #!/bin/sh
 
+CGIT_VARS='$CGIT_TITLE:$CGIT_DESC:$CGIT_SECTION_FROM_STARTPATH'
+
+envsubst "$CGIT_VARS" < /etc/cgitrc.template > /etc/cgitrc
+
 /usr/bin/spawn-fcgi -M 666 -s /var/run/fcgiwrap.socket /usr/sbin/fcgiwrap
 
 /usr/sbin/nginx -g "daemon off;"

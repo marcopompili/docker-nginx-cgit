@@ -2,16 +2,14 @@
 # cgit config
 # see cgitrc(5) for details
 
-root-title=emarcs git server
-root-desc=Git repositories in use on emarcs
+root-title=$CGIT_TITLE
+root-desc=$CGIT_DESC
 
 source-filter=/usr/lib/cgit/filters/syntax-highlighting.sh
 
 # Default Theme
 css=/cgit-css/cgit.css
 logo=/cgit-css/cgit.png
-
-virtual-root=/cgit/
 
 enable-index-links=1
 enable-index-owner=0
@@ -23,6 +21,8 @@ snapshots=tar.gz tar.bz2 zip
 
 robots=noindex, nofollow
 
-section-from-path=1
+virtual-root=/cgit/
+
+section-from-path=$CGIT_SECTION_FROM_STARTPATH
 
 scan-path=/srv/git/
