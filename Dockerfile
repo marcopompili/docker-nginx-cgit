@@ -5,7 +5,8 @@ MAINTAINER Marco Pompili "docker@emarcs.org"
 RUN apt-get -qq update && \
     apt-get -qy install gettext-base && \
     apt-get -qy install fcgiwrap git cgit highlight && \
-    apt-get -qy install ca-certificates nginx gettext-base
+    apt-get -qy install ca-certificates nginx gettext-base && \
+    apt-get -qy install markdown python-docutils groff
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
