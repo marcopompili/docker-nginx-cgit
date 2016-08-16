@@ -20,13 +20,12 @@ Then wait for docker to do its magic.
 
 To launch the container, just the run command like this:
 
-```shell
-
-docker run -d -p 2340:80 \
-  --name nginx-git-srv \
-  -v /git:/srv/git \
-  emarcs/nginx-git
-
+```sh
+docker run -d \
+           -p 2340:80 \
+           --name nginx-git-srv \
+           -v /git:/srv/git \
+           emarcs/nginx-git
 ```
 
 In the above example the **/git** folder of the the host
@@ -38,7 +37,7 @@ the HTTP port is mapped on the host on port **2340**.
 An example using docker-compose of how to mount a custom
 configuration for Nginx:
 
-```ymp
+```yml
 test_srv:
   image: emarcs/nginx-cgit
   ports:
@@ -54,3 +53,19 @@ test_srv:
     # check section-from-path in cgit docs
     CGIT_SECTION_FROM_STARTPATH: 0
 ```
+
+### Cache
+
+cgit provides a cache mechanism (cf https://git.zx2c4.com/cgit/tree/cgitrc.5.txt ), which will
+by default store entries in `/var/cache/cgit`.
+
+You can eventually map this folder to your disk:
+```sh
+docker run -d \
+           -p 2340:80 \
+           --name nginx-git-srv \
+           -v /git:/srv/git \
+           -v /mnt/disk/cgit/cache:/var/cache/cgit \
+           emarcs/nginx-git
+```
+

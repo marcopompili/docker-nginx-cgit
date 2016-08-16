@@ -20,6 +20,7 @@ EXPOSE 80 443
 RUN mkdir /srv/git
 
 VOLUME ["/srv/git"]
+VOLUME ["/var/cache/cgit"]
 
 COPY cgitrc.template /etc/
 
