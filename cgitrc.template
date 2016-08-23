@@ -45,6 +45,10 @@ readme=:install
 css=/cgit-css/cgit.css
 logo=/cgit-css/cgit.png
 
+# Cache
+cache-root=/var/cache/cgit
+cache-size=1000
+
 enable-index-links=1
 enable-index-owner=0
 enable-remote-branches=1
