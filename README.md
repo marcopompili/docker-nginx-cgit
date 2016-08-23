@@ -2,7 +2,7 @@
 
 A Docker image for Cgit running over Nginx.
 
-[![](https://badge.imagelayers.io/emarcs/nginx-cgit:latest.svg)](https://imagelayers.io/?images=emarcs/nginx-cgit:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/version/emarcs/nginx-cgit.svg)](http://microbadger.com/images/emarcs/nginx-cgit "Get your own version badge on microbadger.com")
 
 This is a docker image for Cgit, a lightweight web interface for git.
 
