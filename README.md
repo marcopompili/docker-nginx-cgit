@@ -25,7 +25,7 @@ docker run -d \
            -p 2340:80 \
            --name nginx-git-srv \
            -v /git:/srv/git \
-           emarcs/nginx-git
+           emarcs/nginx-cgit
 ```
 
 In the above example the **/git** folder of the the host
@@ -66,6 +66,6 @@ docker run -d \
            --name nginx-git-srv \
            -v /git:/srv/git \
            -v /mnt/disk/cgit/cache:/var/cache/cgit \
-           emarcs/nginx-git
+           emarcs/nginx-cgit
 ```
 
