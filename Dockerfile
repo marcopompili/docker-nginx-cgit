@@ -1,4 +1,4 @@
-FROM emarcs/debian-minit:jessie
+FROM emarcs/debian-minit:stretch
 
 MAINTAINER Marco Pompili "docker@emarcs.org"
 
@@ -12,8 +12,7 @@ RUN apt-get -qq update && \
 RUN useradd nginx
 
 # forward request and error logs to docker log collector
-RUN ln -sf /dev/stdout /var/log/nginx/access.log \
-    && ln -sf /dev/stderr /var/log/nginx/error.log
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
 
 EXPOSE 80 443
 
