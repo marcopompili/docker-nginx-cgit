@@ -1,6 +1,6 @@
 FROM emarcs/debian-minit:stretch
 
-MAINTAINER Marco Pompili "docker@emarcs.org"
+MAINTAINER Marco Pompili "docker@mg.odd.red"
 
 RUN apt-get -qq update && \
     apt-get -qy install gettext-base \
