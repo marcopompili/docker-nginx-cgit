@@ -63,4 +63,6 @@ virtual-root=$CGIT_VROOT
 
 section-from-path=$CGIT_SECTION_FROM_STARTPATH
 
+max-repo-count=$CGIT_MAX_REPO_COUNT
+
 scan-path=/srv/git/

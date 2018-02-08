@@ -36,4 +36,4 @@ ENV CGIT_TITLE "My cgit interface"
 ENV CGIT_DESC "Super fast interface to my git repositories"
 ENV CGIT_VROOT "/"
 ENV CGIT_SECTION_FROM_STARTPATH 0
-
+ENV CGIT_MAX_REPO_COUNT 50

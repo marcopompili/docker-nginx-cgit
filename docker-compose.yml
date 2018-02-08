@@ -12,3 +12,4 @@ test_srv:
     # check section-from-path in cgit docs
     CGIT_VROOT: '/'
     CGIT_SECTION_FROM_STARTPATH: 1
+    CGIT_MAX_REPO_COUNT: 50
