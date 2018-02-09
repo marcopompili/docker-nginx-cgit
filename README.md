@@ -52,6 +52,7 @@ test_srv:
     CGIT_VROOT: '/'
     # check section-from-path in cgit docs
     CGIT_SECTION_FROM_STARTPATH: 0
+    CGIT_MAX_REPO_COUNT: 50
 ```
 
 ### Cache
