@@ -118,4 +118,7 @@ EXTENSION="${BASENAME##*.}"
 # exec highlight --force -f -I -X -S "$EXTENSION" 2>/dev/null
 
 # This is for version 3
-exec highlight --force --inline-css -f -I -O xhtml -S "$EXTENSION" 2>/dev/null
+# exec highlight --force --inline-css -f -I -O xhtml -S "$EXTENSION" 2>/dev/null
+
+# Version 3 without inline-css
+exec highlight --force -f -I -O xhtml -S "$EXTENSION" 2>/dev/null
