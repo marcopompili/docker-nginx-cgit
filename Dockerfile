@@ -1,4 +1,4 @@
-FROM emarcs/debian-minit:stretch
+FROM emarcs/debian-minit
 
 MAINTAINER Marco Pompili "docker@mg.odd.red"
 
