@@ -6,7 +6,7 @@ RUN apt-get -qq update && \
     apt-get -qy install gettext-base \
                         fcgiwrap git cgit highlight \
                         ca-certificates nginx gettext-base \
-                        markdown python-markdown python-docutils groff && \
+                        markdown python3-markdown python3-docutils groff && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN useradd nginx
