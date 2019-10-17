@@ -1,4 +1,4 @@
-FROM emarcs/debian-minit
+FROM phusion/baseimage:0.11
 
 MAINTAINER Marco Pompili "docker@mg.odd.red"
 
@@ -30,7 +30,7 @@ COPY default.conf /etc/nginx/sites-available/default
 COPY 404.html /usr/share/nginx/html/
 COPY 401.html /usr/share/nginx/html/
 
-COPY startup /etc/minit/
+COPY 99_start.sh /etc/my_init.d/
 
 ENV CGIT_TITLE "My cgit interface"
 ENV CGIT_DESC "Super fast interface to my git repositories"
