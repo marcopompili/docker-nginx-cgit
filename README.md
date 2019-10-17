@@ -46,6 +46,7 @@ test_srv:
     - /srv/git:/srv/git
     # custom nginx configuration
     - ./default.conf:/etc/nginx/sites-available/default
+    - ./cgitrc:/etc/cgitrc
   environment:
     CGIT_TITLE: 'My awesome git repos'
     CGIT_DESC: 'Presented by Cgit on Docker'
