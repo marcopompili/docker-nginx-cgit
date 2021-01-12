@@ -1,11 +1,12 @@
 test_srv:
+  container_name: nginx-cgit-test
   image: emarcs/nginx-cgit
   ports:
     - 8181:80
   volumes:
     - /srv/git:/srv/git
     # for a custom nginx configuration
-    - ./default.conf:/etc/nginx/sites-available/default
+    - ${PWD}/default.conf:/etc/nginx/sites-available/default
   environment:
     CGIT_TITLE: 'My awesome git repos'
     CGIT_DESC: 'Presented by Cgit on Docker'
