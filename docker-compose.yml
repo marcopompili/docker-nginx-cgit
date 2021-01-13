@@ -1,5 +1,5 @@
 test_srv:
-  image: emarcs/nginx-cgit
+  image: emarcs/nginx-cgit:alpine
   ports:
     - 8181:80
   volumes:
