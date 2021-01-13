@@ -1,10 +1,10 @@
 # docker-nginx-cgit
 
-A Docker image for Cgit running over Nginx.
+A Docker image for cGit running over Nginx.
 
 [![](https://images.microbadger.com/badges/image/emarcs/nginx-cgit.svg)](https://microbadger.com/images/emarcs/nginx-cgit) [![](https://images.microbadger.com/badges/version/emarcs/nginx-cgit.svg)](https://hub.docker.com/repository/docker/emarcs/nginx-cgit) ![Pulls](https://img.shields.io/docker/pulls/emarcs/nginx-cgit.svg)
 
-This is a docker image for Cgit, a lightweight web interface for git.
+This is a docker image for cGit, a lightweight web interface for git.
 
 ## Installation
 
@@ -22,10 +22,10 @@ To launch the container, just the run command like this:
 
 ```sh
 docker run -d \
-           -p 2340:80 \
-           --name nginx-git-srv \
-           -v /git:/srv/git \
-           emarcs/nginx-cgit
+  -p 2340:80 \
+  --name nginx-git-srv \
+  -v /git:/srv/git \
+  emarcs/nginx-cgit
 ```
 
 In the above example the **/git** folder of the the host
@@ -57,16 +57,16 @@ test_srv:
 
 ### Cache
 
-cgit provides a cache mechanism (cf https://git.zx2c4.com/cgit/tree/cgitrc.5.txt ), which will
+cGit provides a cache mechanism (cf https://git.zx2c4.com/cgit/tree/cgitrc.5.txt ), which will
 by default store entries in `/var/cache/cgit`.
 
 You can eventually map this folder to your disk:
 ```sh
 docker run -d \
-           -p 2340:80 \
-           --name nginx-git-srv \
-           -v /git:/srv/git \
-           -v /mnt/disk/cgit/cache:/var/cache/cgit \
-           emarcs/nginx-cgit
+  -p 2340:80 \
+  --name nginx-git-srv \
+  -v /git:/srv/git \
+  -v /mnt/disk/cgit/cache:/var/cache/cgit \
+  emarcs/nginx-cgit
 ```
 
