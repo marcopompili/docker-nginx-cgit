@@ -19,8 +19,9 @@ EXPOSE 80 443
 
 RUN mkdir /srv/git
 
-VOLUME ["/srv/git"]
-VOLUME ["/var/cache/cgit"]
+VOLUME ["/srv/git", "/var/cache/cgit"]
+
+ENV CGIT_TITLE="My cgit interface" CGIT_DESC="Super fast interface to my git repositories" CGIT_VROOT="/" CGIT_SECTION_FROM_STARTPATH=0 CGIT_MAX_REPO_COUNT=50
 
 COPY cgitrc.template /etc/
 
@@ -32,9 +33,3 @@ COPY 404.html /usr/share/nginx/html/
 COPY 401.html /usr/share/nginx/html/
 
 COPY 99_start.sh /etc/my_init.d/
-
-ENV CGIT_TITLE "My cgit interface"
-ENV CGIT_DESC "Super fast interface to my git repositories"
-ENV CGIT_VROOT "/"
-ENV CGIT_SECTION_FROM_STARTPATH 0
-ENV CGIT_MAX_REPO_COUNT 50
