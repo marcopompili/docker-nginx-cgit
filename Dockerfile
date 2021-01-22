@@ -13,12 +13,12 @@ VOLUME ["/srv/git", "/var/cache/cgit"]
 
 COPY cgitrc.template /etc
 
-COPY syntax-highlighting.sh /usr/lib/cgit/filters/
+COPY syntax-highlighting.sh /usr/lib/cgit/filters
 
-COPY default.conf /etc/nginx/sites-available/default
+COPY default.conf /etc/nginx/conf.d
 
-COPY 404.html /usr/share/nginx/html/
-COPY 401.html /usr/share/nginx/html/
+COPY 404.html /usr/share/nginx/html
+COPY 401.html /usr/share/nginx/html
 
 COPY start.sh /
 
