@@ -3,7 +3,7 @@ FROM nginx:stable-alpine
 LABEL maintainer="emarcs"
 LABEL email="docker@mg.odd.red"
 
-RUN apk --update --no-cache add fcgiwrap spawn-fcgi cgit python3 py-markdown py3-pygments highlight markdown groff
+RUN apk --update --no-cache add fcgiwrap spawn-fcgi cgit python3 py-markdown py3-pygments highlight markdown groff dumb-init
 
 RUN mkdir /srv/git
 
@@ -20,6 +20,9 @@ COPY default.conf /etc/nginx/conf.d
 COPY 404.html /usr/share/nginx/html
 COPY 401.html /usr/share/nginx/html
 
+COPY config.sh /
 COPY start.sh /
 
-CMD ["/start.sh"]
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+
+CMD ["sh", "-c", "/config.sh && /start.sh"]
