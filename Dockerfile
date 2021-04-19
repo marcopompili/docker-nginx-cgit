@@ -3,7 +3,7 @@ FROM nginx:stable-alpine
 LABEL maintainer="emarcs"
 LABEL email="docker@mg.odd.red"
 
-RUN apk --update --no-cache add fcgiwrap spawn-fcgi cgit python3 py-markdown py3-pygments highlight markdown groff dumb-init
+RUN apk --update --no-cache add fcgiwrap spawn-fcgi cgit python3 py-markdown py3-pygments highlight markdown groff logrotate dumb-init
 
 RUN mkdir /srv/git
 
