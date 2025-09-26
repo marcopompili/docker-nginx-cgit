@@ -8,7 +8,7 @@ services:
     volumes:
       - /srv/git:/srv/git
       # for a custom nginx configuration
-      - ${PWD}/default.conf:/etc/nginx/sites-available/default
+      - ${PWD}/default.conf:/etc/nginx/sites-available/conf.d/default.conf
     environment:
       CGIT_TITLE: 'My awesome git repos'
       CGIT_DESC: 'Presented by Cgit on Docker'
