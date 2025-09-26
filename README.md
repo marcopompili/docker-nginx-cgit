@@ -38,21 +38,23 @@ An example using docker-compose of how to mount a custom
 configuration for Nginx:
 
 ```yml
-test_srv:
-  image: emarcs/nginx-cgit
-  ports:
-    - 8181:80
-  volumes:
-    - /srv/git:/srv/git
-    # custom nginx configuration
-    - ./default.conf:/etc/nginx/sites-available/default
-  environment:
-    CGIT_TITLE: 'My awesome git repos'
-    CGIT_DESC: 'Presented by Cgit on Docker'
-    CGIT_VROOT: '/'
-    # check section-from-path in cgit docs
-    CGIT_SECTION_FROM_STARTPATH: 0
-    CGIT_MAX_REPO_COUNT: 50
+services:
+  cgit:
+    container_name: nginx-cgit-test
+    image: emarcs/nginx-cgit
+    ports:
+      - 8181:80
+    volumes:
+      - /srv/git:/srv/git
+      # for a custom nginx configuration
+      - ${PWD}/default.conf:/etc/nginx/sites-available/conf.d/default.conf
+    environment:
+      CGIT_TITLE: 'My awesome git repos'
+      CGIT_DESC: 'Presented by Cgit on Docker'
+      # check section-from-path in cgit docs
+      CGIT_VROOT: '/'
+      CGIT_SECTION_FROM_STARTPATH: 1
+      CGIT_MAX_REPO_COUNT: 50
 ```
 
 ### Cache
