@@ -1,4 +1,4 @@
-FROM phusion/baseimage:18.04-1.0.0
+FROM debian:13
 
 LABEL maintainer="Marco Pompili"
 LABEL email="docker@mg.odd.red"
